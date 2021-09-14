@@ -1,48 +1,60 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; //responsável por conectar as ações
+import styled from 'styled-components';
 
 import Button from '../../components/button';
 import Input from '../../components/input';
 import List from '../../components/list';
 
-import { addTodo } from '../../store/actions/todo'
+import { addToDo } from '../../store/actions/todo.js';
+
+const Container = styled.div`
+    display: grid;
+    max-width: 720px;
+    margin: auto;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 3rem;
+`
 
 class App extends Component {
     state = {
-        input: ''
-    };
-
-    handleOnClick = () => {
-        console.log('Button was clicked');
-        const { addTodo } = this.props;
-        const { input } = this.state;
-
-        addTodo(input)
-    };
-
-    handleOnChange = (event) => {
-        this.setState({ input: event.target.value });
+        input: '',
     }
 
-    render() {
+    handleOnClick = () => {
+        // console.log('Botão foi clicado')
+        const { addToDo } = this.props;
         const { input } = this.state;
-        const { todoList } = this.props;
-        console.log(todoList)
-        return (
-            <div>
+
+        addToDo(input)
+    }
+
+    handleOnChange = (e) => {
+        this.setState({input: e.target.value});
+    }
+
+    render(){
+
+        const {input} = this.state;
+
+        // const { listTodo } = this.props;
+
+        return(
+            <Container>
+                <Input onChange={(e) => this.handleOnChange(e)} value={input} />
+                <Button onClick={() => this.handleOnClick()}>
+                    Adicionar
+                </Button>
                 <List />
-                <Input onChange={event => this.handleOnChange(event)} value={input} />
-                <Button onClick={() => this.handleOnClick()}>Adicionar</Button>
-            </div>
+            </Container>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    todoList: state.todo
-});
+const mapStateToProps = (state) => ({
+    listTodo: state.todo
+})
 
-export default connect(
-    mapStateToProps,
-    { addTodo }
-)(App);
+export default connect(mapStateToProps, // informações que quer pegar
+    { addToDo } // recebe as informações como propriedades
+    )(App); 
