@@ -23,4 +23,4 @@ const Button = ({children, onClick}) => {
     )
 }
 
-export default Button
+export default Button;
