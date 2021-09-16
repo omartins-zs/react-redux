@@ -1,3 +1,12 @@
+<h1 align="center">Como gerenciar o estado das aplicações com Redux
+ </h1>
+
+
+<h1 align="center">
+    <img alt="React Redux" width="800" height="400" title="" src="./public/react-reddux.png" />
+</h1>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
