@@ -16,6 +16,14 @@ npm i react-redux
 npm i styled-components
 ```
 
+
+#### Utilitários:
+
+- **[link do projeto com css](https://github.com/JulianGN/react-redux-dio)**
+
+- **[link do projeto base curso](https://github.com/Liandro73/redux-app)**
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
