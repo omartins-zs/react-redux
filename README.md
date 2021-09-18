@@ -6,6 +6,15 @@
     <img alt="React Redux" width="800" height="400" title="" src="./public/react-reddux.png" />
 </h1>
 
+#### Instalar as dependencias :
+
+```sh
+npm i case-sensitive-paths-webpack-plugin
+npm i react
+npm i redux
+npm i react-redux
+npm i styled-components
+```
 
 # Getting Started with Create React App
 
